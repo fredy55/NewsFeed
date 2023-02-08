@@ -1,7 +1,7 @@
 
 // API Keys
-export const NewApiKey = 'test';
-export const TheGuardianKey = '768b5001af3f4612ab0fe00e04668bcc';
+export const NewApiKey = '768b5001af3f4612ab0fe00e04668bcc';
+export const TheGuardianKey = 'test';
 export const NyTimesKey = 'p0KKgxHwFK1E3lkTNPehRFaUb0r6EnJb';
 
 //Base URLs

@@ -1,16 +1,13 @@
 import axios from "axios";
 
-export class HttpExReq {
-    
-    getReq(url, param){
-        let respData = null;
+export const getReq = (url, param) => {
+    let respData = null;
 
-        axios.get(url, { params: param })
-        .then((response) => respData = response )
-        .catch((error) => console.log(error) );
+    axios.get(url, { params: param })
+    .then((response) => respData = response )
+    .catch((error) => console.log(error) );
 
-        return respData;
-    }
-
+    return respData;
 }
+
 

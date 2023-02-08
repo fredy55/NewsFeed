@@ -1,49 +1,44 @@
 import { Component } from "react";
 import ContentStyle from "../assets/css/partials.module.css";
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
 import News from "../components/news/News";
+import NewsLoader from "../components/news/NewsLoader";
 import axios from "axios";
-import { HttpExReq } from "../utils/HttpReq";
+import { TheGuardianUrl, TheGuardianKey } from "../utils/ReqConsts"
 
 export default class NewsList extends Component {
     state = {
         posts: null,
-        baseUrl: 'https://content.guardianapis.com/search',
         param: {
-            'api-key': 'test',
+            'api-key': TheGuardianKey,
             page: 1,
             search: '',
         }
         
     }
-
-    
+ 
     componentDidMount(){
-        let response = HttpExReq.getReq(this.state.baseUrl, this.state.param);
-        this.setState({ posts: response.data.response});
-        
+        axios.get(TheGuardianUrl, { params: this.state.param })
+        .then((response) => {
+            console.log(response.data.response);
+            this.setState({ posts: response.data.response });
+        } )
+        .catch((error) => console.log(error) );
     }
 
     render() {
-        let postDisplay = <Col lg={3} md={3} sm={6} xs={12}>
-        <Card className={styles.newsitem}>
-            <Card.Body>
-                <Placeholder as={Card.Title} animation="glow">
-                    <Placeholder xs={6} />
-                </Placeholder>
-                <Placeholder as={Card.Text} animation="glow">
-                    <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
-                    <Placeholder xs={6} /> <Placeholder xs={8} />
-                </Placeholder>
-                <Placeholder.Button variant="primary" xs={6} />
-            </Card.Body>
-        </Card>
-    </Col>;
+        let postDisplay = <>
+            <NewsLoader />
+            <NewsLoader />
+            <NewsLoader />
+        </>;
+
         if(this.state.posts){
-            postDisplay = this.state.posts.results.map((post)=>{
+            postDisplay = this.state.posts.results.map((post, index)=>{
                 return <News 
                 title={post.webTitle} 
                 body={''} 
+                key={index} 
                 link={post.webUrl} />;
             });
         }
@@ -51,9 +46,9 @@ export default class NewsList extends Component {
 
         return (
             <Container className={ContentStyle.newslist}>
+                <h3>NY Times</h3>
                 <Row>
                    { postDisplay } 
-                    
                 </Row>
             </Container>
         );
