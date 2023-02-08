@@ -40,6 +40,21 @@
     padding: 25px 20px;
 }
 
+.newsitem {
+    margin: 3px 0px;
+    max-height: 200px;
+}
+
+.newstitle {
+    font-size: 15px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.newsbtn {
+    font-size: 13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
 .foot {
     background-color: silver;
     padding: 10px 20px;
