@@ -1,0 +1,16 @@
+
+body {
+    background-color: darkslategrey;
+}
+
+.App-Frame {
+   margin: 20px auto;
+   /* background-color: rgb(255, 255, 248); */
+   min-height: 600px;
+}
+
+.App-Contents {
+    min-height: 500px;
+    padding: 20px 20px;
+    background-color: aliceblue;
+ }

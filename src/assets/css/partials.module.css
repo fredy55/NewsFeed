@@ -1,0 +1,50 @@
+
+.head {
+    padding: 10px 20px;
+}
+
+.link {
+    color: aliceblue;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.link:hover {
+    color: aliceblue;
+    text-decoration: underline;
+}
+
+.content {
+  padding: 25px 20px;
+}
+
+.loginfrm {
+    margin: 20px auto;
+    width: 350px;
+    padding: 25px 20px;
+    border: 1px solid rgb(178, 216, 248);
+    border-radius: 6px;
+}
+
+.registerfrm {
+    margin: 20px auto;
+    width: 350px;
+    padding: 25px 20px;
+    border: 1px solid rgb(178, 216, 248);
+    border-radius: 6px;
+}
+
+.newslist {
+    margin: -10px auto;
+    width: 100%;
+    padding: 25px 20px;
+}
+
+.foot {
+    background-color: silver;
+    padding: 10px 20px;
+}
+
+.foot p{
+   text-align: center;
+}
