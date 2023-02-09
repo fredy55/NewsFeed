@@ -9,7 +9,7 @@ const News = (props) => {
                 <Card.Body>
                     <Card.Title className={styles.newstitle}>{ props.title }</Card.Title>
                     <Card.Text>{props.body}</Card.Text>
-                    <Card.Link href={props.link} className={styles.newsbtn}>
+                    <Card.Link href={props.link} target="_blank" className={styles.newsbtn}>
                         Read More
                     </Card.Link>
                 </Card.Body>
