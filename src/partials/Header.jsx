@@ -3,10 +3,37 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import Logo from "../components/navigationbar/Logo";
 import { NavOuter, NavUser } from "../components/navigationbar/NavRight";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { BEBaseUrl } from "../utils/ReqConsts";
+import LoginData from "../utils/LoginData";
 
 const Header = (props) => {
-    const nav = false ? <NavUser /> : <NavOuter />;
-    return (
+
+  const account = LoginData;
+  //console.log(account);
+  
+  const onLogout = () =>{
+    
+    let axiosInstance = axios.create({ 
+      headers: { 
+        Authorization: `Bearer ${account.token}`
+      }
+    });
+
+    axiosInstance.post(`${BEBaseUrl}/auth/logout`)
+        .then((resp) => {
+            //console.info('[RESPONSE INFO]', resp);
+            localStorage.clear()
+            window.location.replace('/login');
+        } )
+        .catch((error) => {
+            console.error('[ERROR]', error.code)
+        });
+  }
+
+  const nav = account ? <NavUser name={account.user.ftname} logout={onLogout} /> : <NavOuter />;
+  
+  return (
       <Navbar className={HeadStyle.head} bg="primary" variant="light" sticky="top">
         <Container>
           <Navbar.Brand href="#">

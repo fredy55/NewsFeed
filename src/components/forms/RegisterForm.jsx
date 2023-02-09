@@ -11,7 +11,8 @@ const RegisterForm = (props) => {
                  name='fname'
                  value={props.curval.fname} 
                  onChange={props.frmchange}
-                 placeholder="First Name" 
+                 placeholder="First Name"
+                 required 
                 />
             </Form.Group>
 
@@ -20,9 +21,10 @@ const RegisterForm = (props) => {
                 <Form.Control 
                     type="text" 
                     name='lname'
-                    value={props.curval.lname} 
+                    value={props.lname} 
                     onChange={props.frmchange}
                     placeholder="Last Name" 
+                    required
                 />
             </Form.Group>
 
@@ -33,7 +35,8 @@ const RegisterForm = (props) => {
                     name='email' 
                     value={props.curval.email} 
                     onChange={props.frmchange}
-                    placeholder="Enter valid email" 
+                    placeholder="Enter valid email"
+                    required 
                 />
             </Form.Group>
 
@@ -44,7 +47,8 @@ const RegisterForm = (props) => {
                     name='password'
                     value={props.curval.password} 
                     onChange={props.frmchange}
-                    placeholder="Password" 
+                    placeholder="Password"
+                    required 
                 />
             </Form.Group>
 

@@ -8,3 +8,4 @@ export const NyTimesKey = 'p0KKgxHwFK1E3lkTNPehRFaUb0r6EnJb';
 export const NewApiUrl = 'https://newsapi.org/v2/top-headlines';
 export const TheGuardianUrl = 'https://content.guardianapis.com/search';
 export const NyTimesUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+export const BEBaseUrl = 'http://127.0.0.1:8000/api/v1';

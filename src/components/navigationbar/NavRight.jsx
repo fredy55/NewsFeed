@@ -6,7 +6,13 @@ export const NavUser = (props) => {
 
     return (
         <Nav className="">
-            <Link href="/" className={HeadStyle.link}>Hi John</Link>
+            <Link style={{marginTop: '8px'}} to="/dashboard" className={HeadStyle.link}>
+                <span style={{ paddingRight: '20px'}}>Dashboard</span>|
+            </Link>
+            <Nav.Link className={HeadStyle.link}>Hi! {props.name}</Nav.Link>
+            <Nav.Link onClick={props.logout} className={HeadStyle.link}>
+                Logout
+            </Nav.Link>
         </Nav>
     );
 }
